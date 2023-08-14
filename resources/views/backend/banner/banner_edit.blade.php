@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Thêm mới</h4><br><br>
+                            <h4 class="card-title">Banner update</h4><br><br>
                             <form method="post" action="{{ route('banner.update') }}" id="myForm"
                                 enctype="multipart/form-data">
                                 @csrf

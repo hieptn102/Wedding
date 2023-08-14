@@ -150,8 +150,8 @@
                                         </div>
                                         <div class="event-col">
                                             <i class="icon-calendar"></i>
-                                            <span>Monday 28</span>
-                                            <span>November, 2016</span>
+                                            <span>Thứ 2, Ngày 28</span>
+                                            <span>Tháng 11, 2023</span>
                                         </div>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. Separated they live in

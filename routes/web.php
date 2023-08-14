@@ -1,21 +1,22 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Pos\CategoryController;
-use App\Http\Controllers\Pos\SupplierController;
-use App\Http\Controllers\Pos\CustomerController;
+use App\Http\Controllers\Pos\DesController;
 use App\Http\Controllers\Pos\UnitController;
-use App\Http\Controllers\Pos\ProductController;
-use App\Http\Controllers\Pos\PurchaseController;
-use App\Http\Controllers\Pos\DefaultController;
-use App\Http\Controllers\Pos\InvoiceController;
+use App\Http\Controllers\Web\homecontroller;
+use App\Http\Controllers\Demo\DemoController;
+use App\Http\Controllers\Pos\EventController;
 use App\Http\Controllers\Pos\StockController;
 use App\Http\Controllers\Pos\BannerController;
-use App\Http\Controllers\Pos\DesController;
-use App\Http\Controllers\Web\homecontroller;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
+use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\CategoryController;
+use App\Http\Controllers\Pos\CustomerController;
+use App\Http\Controllers\Pos\PurchaseController;
+use App\Http\Controllers\Pos\SupplierController;
 
 
 
@@ -36,6 +37,12 @@ Route::controller(DemoController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    //Banner All Route
+    Route::controller(EventController::class)->group(function () {
+        Route::get('/event/all', 'EventAll')->name('event.all');
+        Route::get('/event/edit/{id}', 'EventEdit')->name('event.edit');
+        Route::post('/event/update', 'EventUpdate')->name('event.update');
+    });
     //Description All Route
     Route::controller(DesController::class)->group(function () {
         Route::get('/des/all', 'DesAll')->name('des.all');
